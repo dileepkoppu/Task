@@ -28,7 +28,7 @@ const TaskList =async(req,res)=>{
                     const data1 = data.filter((d)=>d.Status==="In Progress")
                     let data2 =  data.filter((d)=>d.Status==="Completed")
                     if (data2.length>10) {
-                        data2=data2.splice(0,11)
+                        data2=data2.splice(0,10)
                     }
                     const data3 = data.filter((d)=>d.Status==="Archive")
                     res.status(200).send({success:true,data:[data1,data2,data3]});
@@ -110,9 +110,9 @@ const subTasKList= async(req,res)=>{
         SubTask.find({TaskId:id})
                                 .then((data)=>{                    
                                     const data1 = data.filter((d)=>d.Status==="In Progress")
-                                    const data2 =  data.filter((d)=>d.Status==="Completed")
+                                    let data2 =  data.filter((d)=>d.Status==="Completed")
                                     if (data2.length>10) {
-                                        data2=data2.splice(0,11)
+                                        data2=data2.splice(0,10)
                                     }
                                     const data3 = data.filter((d)=>d.Status==="Archive")
                                     res.status(200).json({success:true,data:[data1,data2,data3]});
