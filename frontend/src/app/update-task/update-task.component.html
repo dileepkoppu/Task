@@ -1,0 +1,16 @@
+<div class="bg-white border rounded-5">
+    
+  <section class="w-100 p-4 d-flex justify-content-center pb-4">
+    <form style="width: 22rem;" [formGroup]="updateTaskFrom" (ngSubmit)="onsubmit()">
+        <div class="mb-3">
+            <label for="disabledSelect" class="form-label">Status</label>
+            <select id="disabledSelect" class="form-select" formControlName="Status">
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+              <option value="Archive">Archive</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!updateTaskFrom.valid">Submit</button>
+    </form>
+  </section>
+</div>

@@ -1,0 +1,20 @@
+<div class="p-4">
+
+  <div  >
+    <div class="text-end fs-4">
+      <a [routerLink]="['/',id,'CreateSubTask']">Create Sub Task</a>
+      
+    </div>
+    <hr>
+    <div  class="row"  *ngFor="let subtaskLists of data1">
+          <div class="card" style="width: 18rem;" *ngFor="let taskList of subtaskLists">
+            <div class="card-body">
+              <h5 class="card-title">{{taskList.Title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{taskList.Status}}</h6>
+              <p class="card-text">{{taskList.Description}}</p>
+              <a [routerLink]="['UpdateSubTask',taskList._id]" class="card-link">Update</a>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

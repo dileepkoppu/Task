@@ -1,0 +1,23 @@
+<div class="bg-white border rounded-5">
+    
+  <section class="w-100 p-4 d-flex justify-content-center pb-4">
+    <form [formGroup]="CreateSubTaskForm" (ngSubmit)="onsubmit()" style="width: 22rem;" >
+      
+      <div class="form-outline mb-4">
+        <input type="text" id="form1Example1" class="form-control" formControlName="Title">
+        <label class="form-label" for="form1Example1" style="margin-left: 0px;">Title</label>
+      <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+      
+      <div class="form-outline mb-4">
+        <textarea class="form-control" id="Description" rows="3" formControlName="Description"></textarea>
+        <label class="form-label" for="Description" style="margin-left: 0px;">Description</label>
+      <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div>
+    </div>
+
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="!CreateSubTaskForm.valid">Submit</button>
+    </form>
+  </section> 
+  
+  
+</div>
